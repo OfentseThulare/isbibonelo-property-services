@@ -9,6 +9,15 @@ import { Button } from './components/ui/Button';
 import { BRAND_NAME, CONTACT_INFO, HQ_ADDRESS } from './constants';
 import { trackFunnelClick } from './services/analytics';
 
+/** Scrolls to top on every route change — no more landing on the footer */
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
@@ -130,6 +139,7 @@ const Footer = () => (
 const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
