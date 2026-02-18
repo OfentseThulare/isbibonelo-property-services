@@ -64,7 +64,7 @@ const About: React.FC = () => {
             {/* CEO Photo — uses actual Shadrack image from /public/ */}
             <div className="relative rounded-card overflow-hidden aspect-[3/4] max-w-sm mx-auto md:mx-0 w-full">
               <img
-                src="/shadrack-mthethwa.jpg"
+                src="/shadrack-mthethwa.webp"
                 alt="Shadrack Mthethwa — Founder & CEO"
                 className="w-full h-full object-cover object-top"
                 onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
